@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Friendly I\'m Here';
+  loggedIn: boolean;
+  router: Router;
+
+  constructor(router: Router) {
+    this.loggedIn = false;
+    this.router = router;
+  }
+
+  onLoginLogout() {
+    this.loggedIn = !this.loggedIn;
+    this.loggedIn ? this.router.navigate(['/me']) : this.router.navigate(['/welcome']);
+  }
 }

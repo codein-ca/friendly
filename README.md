@@ -11,3 +11,4 @@ The app has a whole bunch of features, but in other to save some time the main A
 Finally a more advanced feature would be to enable communication with nearby users:
 - To check users that are nearby, a google maps feature is required - https://developers.google.com/maps/documentation/distance-matrix/start
 - To allow users to communicate with each other using our platform, I am not sure but I guess Node is required - https://socket.io/get-started/chat/ 
+

@@ -1,5 +1,4 @@
-<div>
-  <h1>
-    Welcome to <span class="app-title">{{ title }}</span>!
-  </h1>
-</div>
+<app-header (click)="onLoginLogout()"></app-header>
+<!--<app-welcome-screen *ngIf=" !loggedIn "></app-welcome-screen>-->
+<!--<app-action-screen *ngIf=" loggedIn "></app-action-screen>-->
+<router-outlet></router-outlet>
