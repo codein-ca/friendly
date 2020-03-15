@@ -8,6 +8,7 @@
         "packages/*"
     ],
     "scripts": {
-        "fe": "cd ./packages/fe/ && yarn start"
+        "fe": "cd ./packages/fe/ && yarn start",
+        "sb": "cd ./packages/storybook/ && yarn storybook"
     }
 }
