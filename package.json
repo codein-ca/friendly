@@ -1,14 +1,14 @@
 {
-    "name": "root",
-    "private": true,
-    "devDependencies": {
-        "lerna": "^3.20.2"
-    },
-    "workspaces": [
-        "packages/*"
-    ],
-    "scripts": {
-        "fe": "cd ./packages/fe/ && yarn start",
-        "sb": "cd ./packages/storybook/ && yarn storybook"
-    }
+  "name": "@codein/monorepo",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "fe": "cd ./packages/fe/ && yarn start",
+    "sb": "cd ./packages/storybook/ && yarn storybook"
+  }
 }
