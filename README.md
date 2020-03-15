@@ -3,7 +3,7 @@
 A react project. Monorepo with Lerna. BE with Node.
 
 ## TODO
-- Switch to latest React
+- Enable Storybook components to be sourced to a main micro-app
 - Get started with TDD in mind
 
 ## Main modules as I see it now
