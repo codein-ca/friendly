@@ -1,0 +1,5 @@
+body, * {
+    /*TODO: remove * once Webpack loading Storybook issue is resolved*/
+    background-color: #333;
+    color: ghostwhite;
+}

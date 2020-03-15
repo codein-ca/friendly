@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "fe": "cd ./packages/fe/ && yarn start",
-    "sb": "cd ./packages/storybook/ && yarn storybook"
+    "fe": "cd ./packages/fe-app/ && yarn start",
+    "sb": "cd ./packages/fe-app/ && yarn storybook"
   }
 }
