@@ -2,7 +2,8 @@ import { addParameters } from "@storybook/react"; // <- or your storybook framew
 
 addParameters({
   backgrounds: [
-    { name: "twitter", value: "#00aced", default: true },
-    { name: "facebook", value: "#3b5998" }
+    { name: "some darker gray", value: "#333" },
+    { name: "clearly white", value: "whitesmoke", default: true },
+    { name: "super pink", value: "hotpink" }
   ]
 });
