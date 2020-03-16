@@ -3,8 +3,7 @@
 A react project. Monorepo with Lerna. BE with Node.
 
 ## TODO
-- Enable Storybook components to be sourced to a main micro-app
-- Get started with TDD in mind
+- Start components with Tests as well
 
 ## Main modules as I see it now
 
@@ -17,3 +16,5 @@ Finally a more advanced feature would be to enable communication with nearby use
 - To check users that are nearby, a google maps feature is required - https://developers.google.com/maps/documentation/distance-matrix/start
 - To allow users to communicate with each other using our platform, I am not sure but I guess Node is required - https://socket.io/get-started/chat/
 
+## Future topics
+- Enable Storybook components to be sourced to a main micro-app
