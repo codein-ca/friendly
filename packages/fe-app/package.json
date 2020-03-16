@@ -1,6 +1,6 @@
 {
   "name": "@codein/fe-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@storybook/addon-a11y": "^5.3.17",
