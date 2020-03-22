@@ -8,7 +8,9 @@ type TButton = {
   onChange?: () => void;
   override?: ButtonOverride;
 };
-
+type ButtonOverrideParent = {
+  override: ButtonOverride;
+};
 type ButtonOverride = {
   width: {
     em?: number;
@@ -17,20 +19,16 @@ type ButtonOverride = {
   };
 };
 
-const Label = styled.label<ButtonOverride>`
+const Label = styled.label<ButtonOverrideParent>`
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  width: ${props => {
-    if (props.override && props.override.width && props.override.width.em) {
-      return `${props.override.width.em}em`;
+  width: ${({ override }) => {
+    if (override && override.width && override.width.em) {
+      return `${override.width.em}em`;
     }
-    if (
-      props.override &&
-      props.override.width &&
-      props.override.width.percent
-    ) {
-      return `${props.override.width.percent}%`;
+    if (override && override.width && override.width.percent) {
+      return `${override.width.percent}%`;
     }
     return "10em";
   }};
