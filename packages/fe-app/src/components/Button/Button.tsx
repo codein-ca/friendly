@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
+import COLORS from "../colors";
 
-type TButton = {
+type Props = {
   name: string;
-  label: string;
-  onClick?: () => void;
-  onChange?: () => void;
-  override?: ButtonOverride;
+  label?: string;
+  onClick: () => void;
+  options?: TOptions;
 };
-type ButtonOverrideParent = {
-  override: ButtonOverride;
-};
-type ButtonOverride = {
+
+type TOptions = {
   width: {
     em?: number;
     px?: number;
@@ -19,56 +17,34 @@ type ButtonOverride = {
   };
 };
 
-const Label = styled.label<ButtonOverrideParent>`
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  width: ${({ override }) => {
-    if (override && override.width && override.width.em) {
-      return `${override.width.em}em`;
-    }
-    if (override && override.width && override.width.percent) {
-      return `${override.width.percent}%`;
+const StyledInput = styled.input<Props>`
+  padding: 1em;
+  border: none;
+  color: hsla(0, 0%, 50%, 1);
+  outline: 1px solid hsla(0, 0%, 50%, 1);
+  background-color: #e8e8e8;
+  width: ${({ options }: Props) => {
+    if (options && options.width) {
+      if (options.width.em) return `${options.width.em}em`;
+      if (options.width.percent) return `${options.width.percent}%`;
     }
     return "10em";
   }};
   max-width: 100%;
-`;
 
-const LabelText = styled.span`
-  user-select: none;
-  font-size: x-small;
-  font-weight: lighter;
-  font-style: italic;
-  font-stretch: extra-expanded;
-  text-transform: uppercase;
-  color: #7b7b7b;
-`;
-
-const ButtonInput = styled.input`
-  border: 1px solid #cacaca;
-  background-color: #e8e8e8;
   &:focus,
   &:active {
-    border-color: hotpink;
+    color: crimson;
+    // TODO: have a central theme
+    // color: $//{COLORS => {
+    //   return COLORS.primary ? COLORS.primary : "crimson";
+    // }};
+    outline: 2px solid crimson;
     background-color: snow;
+    box-shadow: 0 0 6px 3px rgba(210, 31, 212, 0.25);
   }
 `;
 
-export const Button = ({
-  name,
-  label,
-  onChange,
-  onClick,
-  override
-}: TButton) => (
-  <Label htmlFor={name} override={override}>
-    <LabelText aria-label={label}>{label}</LabelText>
-    <ButtonInput
-      type="button"
-      name={name}
-      onClick={onClick}
-      onChange={onChange}
-    />
-  </Label>
+export const Button = (props: Props) => (
+  <StyledInput type="button" {...props} value={props.label || props.name} />
 );
